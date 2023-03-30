@@ -39,7 +39,7 @@ shoe_list = []
 def read_shoes_data():
     
     try:
-        with open("inventory.txt", "r", encoding='utf-8-sig') as file_data:
+        with open("inventory-info.txt", "r", encoding='utf-8-sig') as file_data:
             lines = file_data.readlines()
             del lines[0]
         
@@ -79,7 +79,7 @@ def capture_shoes():
     new_shoe_object = Shoe(country, code, product, cost, quantity)
     shoe_list.append(new_shoe_object)
 
-    with open("inventory.txt", "a") as txt_file:
+    with open("inventory-info.txt", "a") as txt_file:
         txt_file.write(f"\n{new_shoe_object.country},{new_shoe_object.code},"
         f"{new_shoe_object.product},{new_shoe_object.cost},{new_shoe_object.quantity}")
      
@@ -117,7 +117,7 @@ def re_stock():
             shoe.quantity = new_qty
     # Please note, the new quantity list is printed to a new txt file not to 
     # disrupt the original txt file. 
-    with open("inventory.txt", "w") as txt_file:
+    with open("inventory-info.txt", "w") as txt_file:
         txt_file.write("Country,Code,Product,Cost,Quantity")
         txt_file.write("\n")
         for shoe in shoe_list:
