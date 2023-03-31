@@ -79,7 +79,7 @@ def capture_shoes():
     new_shoe_object = Shoe(country, code, product, cost, quantity)
     shoe_list.append(new_shoe_object)
 
-    with open("inventory-info.txt", "a") as txt_file:
+    with open("inventory-info.txt", "a", encoding='utf-8-sig') as txt_file:
         txt_file.write(f"\n{new_shoe_object.country},{new_shoe_object.code},"
         f"{new_shoe_object.product},{new_shoe_object.cost},{new_shoe_object.quantity}")
      
